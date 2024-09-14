@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catriz's Stock list</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0'>
+    <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="website icon" type="png" href="pictures/logo.png">
+</head>
+
+<body>
+    <!-- -----------HEADER---------- -->
+    <div id="header">
+      <div class="container">
+        <nav class="navbar">
+          <span class="hamburger-btn material-symbols-rounded">Menu</span>
+          <ul class="links">
+            <span class="close-btn material-symbols-rounded">Close</span>
+            <li><a href="#header">Home</a></li>
+            <li><a href="#" id="dashboard-link">Dashboard</a></li>           
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+          </ul>
+          <button class="login-btn">LOG IN</button>             
+        </nav>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const dashboardLink = document.getElementById('dashboard-link');
+    
+          dashboardLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default behavior
+            // Perform navigation here
+            window.location.href = 'dashboard.php'; // Navigate to dashboard.php
+          });
+        });
+      </script>
+        <div class="header-text">
+          <p>Hello, Welcome to</p>
+          <h1>Catriz's Minimart <br><span>Item Stock list</span></h1>
+        </div>
+    </div>
+      
+    <div class="blur-bg-overlay"></div>
+    <div class="form-popup" id="form">
+      <span class="close-btn material-symbols-rounded">close</span>
+      <div class="form-box login">
+        <div class="form-details">
+          <h2>Welcome</h2>
+          <p>Catriz Minimart item Stocklist</p>
+        </div>
+        <div class="form-content">
+          <h2>LOGIN</h2>
+          <form action="Logscript.php" method="post">
+            <div class="input-field">
+              <input type="text" name="username" id="username" required>
+              <label>Username</label>
+            </div>
+            <div class="input-field">
+              <input type="email" name="email" id="email" required>
+              <label>Email</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="password" id="password" required>
+              <label>Password</label>
+            </div>
+            <a href="#" class="forgot-pass-link">Forgot password?</a>
+            <button type="submit">Log In</button>
+          </form>
+          <div class="bottom-link">
+            Don't have an account?
+            <a href="#" id="signup-link">Signup</a>
+          </div>
+        </div>
+      </div>
+      <div class="form-box signup">
+        <div class="form-details">
+          <h2>Create Account</h2>
+          <p>To to access more about Catriz Minimart Stocklist</p>
+        </div>
+        <div class="form-content">
+          <h2>SIGNUP</h2>
+          <form action="Sign-Script.php" method="post">
+            <div class="input-field">
+              <input type="text" name="username" id="username" required>
+              <label>Enter Username</label>
+            </div>
+            <div class="input-field">
+              <input type="email" name="email" id="email" required>
+              <label>Enter Email</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="password" id="password" required>
+              <label>Create Password</label>
+            </div>
+            <div class="input-field">
+              <input type="password" name="password" id="password" required>
+              <label>Re-enter Password</label>
+            </div>
+            <div class="policy-text">
+              <input type="checkbox" id="policy" required>
+              <label for="policy">      
+                I agree the 
+                <a href="#" class="option" id="terms-link">Terms & Conditions</a>
+              </label>
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+          <div class="bottom-link">
+            Already have an account?
+            <a href="#" id="login-link">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Terms & Conditions Modal -->
+    <div id="terms-modal" class="terms-modal">
+      <div class="modal-content-terms">
+        <h2 class="terms-title">Terms and Conditions:</h2>
+        <p class="terms-content">Welcome to Catriz MiniMart! By signing up, you commit to adhering to the outlined terms and conditions. Take a moment to review them thoroughly before finalizing your registration.</p>
+        <p class="terms-p"> 
+            <strong>1.</strong> By signing up for Catriz MiniMart, you agree to their Terms and Conditions, which are crucial for a transparent relationship. Changes to these terms are effective immediately upon posting, and your continued use implies acceptance.<br>
+            <br><strong>2.</strong> During registration, you must provide accurate information and safeguard your account credentials. Failure to do so may result in account compromise, for which Catriz MiniMart holds no liability. Additionally, your use of the service is governed by their Privacy Policy. <br>
+            <br><strong>3.</strong> Users must refrain from using the service unlawfully or in a manner that could damage Catriz MiniMart's systems. Intellectual property rights are protected, and unauthorized use is strictly prohibited, with termination being a possibility for violations.<br>
+            <br><strong>4.</strong> Catriz MiniMart provides their service "as-is" with no warranties, and they disclaim all liability for damages. These terms are governed by the law, and any disputes shall be resolved in specified courts, with users agreeing to their jurisdiction.</p>
+        <p class="terms-content">Clicking "Sign Up" indicates your agreement to abide by the presented Terms and Conditions, acknowledging that electronic acceptance holds the same weight as a physical signature.</p>
+        <button class="terms-btn" onclick="agreeTerms()">I Agree</button>
+      </div>
+    </div>
+
+      <!-- partial -->
+      <script src="script.js"></script>
+
+    <!-- ----------ABOUT---------- -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="pictures/logo.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="about">About</h1>
+                    <p class="sub-title2">Catriz's Minimart serves as a beacon in the retail landscape, demonstrating the profound impact of a 
+                        well-managed item stock list. As we conclude this exploration, it becomes evident that the minimart's 
+                        commitment to strategic stock management is a key driver behind its sustained success. By continually 
+                        adapting to market trends, understanding consumer behavior, and leveraging technology, 
+                        Catriz's Minimart stands poised for a future marked by continued growth and customer satisfaction.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ----------PRODUCTS---------- -->
+    <div id="products">
+        <div class="container">
+            <h1 class="products">Minimart Products</h1>
+            <div class="product-list">
+                <div class="list-1">
+                    <h2>Coca-<br>Cola</h2>
+                    <p>Price: <span>&#8369</span>70<br>
+                    Size: 1.5Liter</p>
+                </div>
+                <div class="list-2">
+                    <h2>Oriental- Premium Edible Oil</h2>
+                    <p>Price: <span>&#8369</span>40<br>
+                    Size: 250 ml</p>
+                </div>
+                <div class="list-3">
+                    <h2>Del Monte- Juice Drink</h2>
+                    <p>Price: <span>&#8369</span>34.68<br>
+                    Size: 240ml</p>
+                </div>
+                <div class="list-4">
+                    <h2>Emperador- Double Light</h2>
+                    <p>Price: <span>&#8369</span>240<br>
+                    Size: 1Liter</p>
+                </div>
+                <div class="list-5">
+                    <h2>Johnson's Baby Powder</h2>
+                    <p>Price: <span>&#8369</span>23<br>
+                    Size: 25g</p>
+                </div>
+                <div class="list-6">
+                    <h2>Colgate- Toothpaste</h2>
+                    <p>Price: <span>&#8369</span>180<br>
+                    Size: 214g</p>
+                </div>
+                <div class="list-7">
+                    <h2>GSM Blue-<br> Mojito</h2>
+                    <p>Price: <span>&#8369</span>120<br>
+                    Size: 700ml</p>
+                </div>
+                <div class="list-8">
+                    <h2>Silver Swan-Soy Sauce</h2>
+                    <p>Price: <span>&#8369</span>20<br>
+                    Size: 385ml</p>
+                </div>
+                <div class="list-9">
+                    <h2>Silver Swan-Fish Sauce</h2>
+                    <p>Price: <span>&#8369</span>25<br>
+                    Size: 350ml</p>
+                </div>
+                <div class="list-10">
+                    <h2>Silka Soap-Shea Butter</h2>
+                    <p>Price: <span>&#8369</span>55<br>
+                    Size: 135g</p>
+                </div>
+                <div class="list-11">
+                    <h2>Safeguard- <br>Soap</h2>
+                    <p>Price: <span>&#8369</span>70<br>
+                    Size: 180g</p>
+                </div>
+                <div class="list-12">
+                    <h2>Shampoo- Sunsilk Pink</h2>
+                    <p>Price: <span>&#8369</span>85<br>
+                    Size: 12 sachets</p>
+                </div>
+                <div class="list-13">
+                    <h2>RAM-Tomato Sauce</h2>
+                    <p>Price: <span>&#8369</span>25<br>
+                    Size: 200g</p>
+                </div>
+                <div class="list-14">
+                    <h2>Jergens- <br>Lotion</h2>
+                    <p>Price: <span>&#8369</span>80<br>
+                    Size: 600ml</p>
+                </div>
+                <div class="list-15">
+                    <h2>Glowee-Dishwashing Soap</h2>
+                    <p>Price: <span>&#8369</span>40<br>
+                    Size: 1Liter</p>
+                </div>
+            </div>
+            <p class="more">Click <span class="click">Log-in</span>   to see all Products</p>
+        </div>
+    </div>
+
+    <div class="footer">
+      <a href="" class="icon icon-facebook">
+        <i class='bx bxl-facebook-circle' aria-hidden="true"></i>
+      </a>
+      <a href="" class="icon icon-instagram">
+        <i class='bx bxl-instagram' aria-hidden="true"></i>
+      </a>
+      <a href="" class="icon icon-telegram">
+        <i class='bx bxl-telegram' aria-hidden="true"></i>
+      </a>
+      <a href="" class="icon icon-github">
+        <i class='bx bxl-github' aria-hidden="true"></i>
+      </a>
+    </div>
+      <div class="copy">
+        <p>&copy;Copyright 2023-2024@Catriz's Minimart Item.Stock list</p>
+      </div>      
+    </div>
+    
+</body>
+
+</html>

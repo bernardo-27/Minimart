@@ -1,0 +1,416 @@
+*{
+    font-family: "Raleway", sans-serif;
+    
+}
+body {
+    background-image: url('pictures/background.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* backdrop-filter: blur(2px); */
+}
+
+.container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 10px;
+}
+.log {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px; 
+    cursor: pointer;
+}
+
+.more a {
+    display: inline-block; 
+    padding: 10px;
+    background-color: #4CAF50; 
+    color: white; 
+    text-decoration: none; 
+    margin-top: 20px;
+}
+
+.copy {
+    text-align: center;
+    padding: 10px;
+}
+
+/* upper styles */
+.modalBtn {
+    float: right;
+    margin-right: 10px;
+    display: inline-flex;
+}
+#openModalBtn{
+    width: 100px;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #0060c7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.moreItems-btn:hover, 
+#openModalBtn:hover {
+    background-color: rgb(0, 140, 255);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+.modal-content {
+    background-color: rgb(63, 63, 63);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* Optional: Some basic styling for the button */
+.moreItems-btn{
+    margin-bottom: 40px;
+    padding: 10px 20px;
+    background-color: #005cbe;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#moreItems {
+    margin-left: 10px;
+}
+.more-items {
+    position: absolute;
+    text-align: center;
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#itemsAlert {
+    position: absolute;
+    text-align: center;
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: -37px;
+}
+
+
+/* recent Products */
+.recent-products {
+    padding-top: 30px;
+    border-radius: 10px 10px 0 0;
+}
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: rgb(182, 182, 182, .5);     
+    border-radius: 0 0 10px 10px;  
+    border: .5px solid black;    
+}
+.product-item {
+    flex: 1 1 calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    padding-left: 20px;
+    transition: background-color .2s;
+}
+.product-item::before {
+    content: '\2022';
+    position: absolute;
+    left: 0;
+    color: black; 
+    font-size: 35px;
+    line-height: 28px;
+}
+.product-item:hover {
+    background-color: #f1f1f1;
+}
+.product-title {
+    font-size: 10px;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.product-item span {
+    font-size: 1.2em;
+}
+
+/* chart CSS */
+.chart-title, .recent-products {
+    text-align: center;
+    font-size: bolder;
+    font-family:'Times New Roman', Times, serif;
+    background: rgb(2, 134, 241);
+    padding: 8px;
+    margin: 0 auto;
+    border: .5px solid black;
+}
+canvas {
+    background: rgba(18, 7, 7, 0.9);  
+    margin-bottom: 30px; 
+    border: .8px solid black;
+}
+
+/* form-Group */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+}
+.form-popup {
+    position: fixed;
+    width: 100%;    
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    max-width: 720px;
+    display: none;
+}
+.show-popup .form-popup {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.1s;
+}
+.form-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: bold;
+}
+.form-popup .close-btn:hover {
+    color: #ff0000;
+}
+.show-popup .overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+.form-popup .form-box {
+    display: flex;
+}
+/* .form-box .form-details {
+    padding-top: 40px;
+    width: 100%;
+    color: #000000;
+    max-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+.login .form-details {
+    margin-top: 20px;
+    padding: 0 40px;
+    background: url("picSign.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+.signup .form-details {
+    padding: 0 20px;
+    background: url("picLog.jpeg");  
+    background-position: center;
+    background-size: cover;
+}
+.form-box .form-content {
+    width: 100%;
+}
+.form-box .form-title {
+    text-shadow: 2px 2px 2px #005cbe;
+    text-align: center;
+    margin-bottom: 17px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.form-box .form-p {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow:1px 2px 4px #005cbe;
+}
+form .input-field {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+}
+.input-field input {
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0 15px;
+    border: 1px solid #717171;
+    border-radius: 5px;
+}
+.input-field input:focus {
+    border: 1px solid #005cbe;
+}
+.input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #4a4646;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+.input-field input:is(:focus, :valid) ~ label {
+    transform: translateY(-120%);
+    color: #005cbe;
+    font-size: 0.65rem;
+}
+.form-box a {
+    color: #005cbe;
+    text-decoration: none;
+}   
+.form-box a:hover {
+    text-decoration: underline;
+}
+form :where(.forgot-pass-link, .policy-text) {
+    display: inline-flex;
+    margin-top: 10px;
+    font-size: 0.75rem;
+}  
+form button {
+    width: 100%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0;
+    background: #005cbe;
+    transition: 0.2s ease;
+}
+form button:hover {
+    background: #012b58;
+}
+.form-content .bottom-link {
+    text-align: center;
+}
+.form-popup .signup,
+.form-popup.show-signup .login {
+    display: none;
+}
+.form-popup.show-signup .signup {
+    display: flex;
+}
+.signup .policy-text {
+    display: flex;
+    margin-top: 14px;
+    align-items: center;
+}
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* terms and condition */
+.conditions {
+    border-radius: 30px;
+    width: 100%;
+    text-align: justify;
+}
+.terms-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+.terms-content {
+    text-indent: 25px;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+}
+.terms-p {
+    font-size: 13px;
+    font-style: italic;
+}
+.terms-btn {
+    width: 100%;
+    /* float: right; */
+    background: #005cbe;
+    border: hidden;
+    border-radius: 6px;
+}
+.terms-btn:hover {
+    color: white;
+    background: #001561;
+    transition: .1s ease-out;
+}
+
+/* ----------FOOTER---------- */
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: rgb(182, 182, 182);
+    font-weight: bold;
+}
+@media (max-width: 767px) {
+.form-popup {
+    width: 95%;
+}
+.form-box .form-details {
+    display: none;
+}
+.form-box .form-content {
+    padding: 30px 20px;
+}
+}
